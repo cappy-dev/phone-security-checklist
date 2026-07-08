@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Security Checklist | Cappy</title>
+  <meta name="description" content="An interactive checklist for securing your phone. Lock down your location, block trackers, and make your device unhackable.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://cappy-dev.github.io" class="nav-logo">🎩 cappy</a>
+    <div class="nav-links">
+      <a href="https://github.com/cappy-dev/phone-security-checklist" target="_blank" rel="noopener" class="nav-link">GitHub</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>🔒 Phone Security Checklist</h1>
+      <p class="hero-sub">Lock down your phone. Block trackers. Hide your location. Make your device unhackable.</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text" id="progressText">0 of 0 done</div>
+      <div class="hero-actions">
+        <button class="btn btn-secondary" id="resetBtn">↺ Reset all</button>
+        <button class="btn btn-secondary" id="exportBtn">📋 Copy summary</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section: Everyday Essentials -->
+    <section class="checklist-section" data-category="everyday">
+      <div class="section-header">
+        <h2>✅ Everyday Essentials</h2>
+        <p class="section-desc">Start here. These are the basics that protect you every single day.</p>
+      </div>
+      <div class="checklist-items" id="everyday"></div>
+    </section>
+
+    <!-- Section: Lock Down Your Location -->
+    <section class="checklist-section" data-category="location">
+      <div class="section-header">
+        <h2>📍 Hide Your Location</h2>
+        <p class="section-desc">Your location is your identity. Stop apps, advertisers, and networks from tracking where you go.</p>
+      </div>
+      <div class="checklist-items" id="location"></div>
+    </section>
+
+    <!-- Section: Network & Data Protection -->
+    <section class="checklist-section" data-category="network">
+      <div class="section-header">
+        <h2>🌐 Network & Data Protection</h2>
+        <p class="section-desc">Protect what leaves your phone. Your IP address, DNS queries, and network traffic are all leaks.</p>
+      </div>
+      <div class="checklist-items" id="network"></div>
+    </section>
+
+    <!-- Section: App & Permission Lockdown -->
+    <section class="checklist-section" data-category="apps">
+      <div class="section-header">
+        <h2>📱 App & Permission Lockdown</h2>
+        <p class="section-desc">Every app is a potential spy. Audit permissions, cut background access, and replace leaky apps.</p>
+      </div>
+      <div class="checklist-items" id="apps"></div>
+    </section>
+
+    <!-- Section: Advanced / Paranoia Mode -->
+    <section class="checklist-section" data-category="advanced">
+      <div class="section-header">
+        <h2>🛡️ Advanced: Maximum Privacy</h2>
+        <p class="section-desc">For journalists, activists, or anyone who needs serious operational security. These are the harder but most effective steps.</p>
+      </div>
+      <div class="checklist-items" id="advanced"></div>
+    </section>
+  </main>
+
+  <section class="sources">
+    <h2>📚 Sources & References</h2>
+    <p>This checklist is built from expert privacy guides. Watch the full videos for deep dives:</p>
+    <ul class="source-list">
+      <li>
+        <a href="https://www.youtube.com/watch?v=WkmTxBTe52o" target="_blank" rel="noopener">
+          <span class="source-thumb"><img src="https://i.ytimg.com/vi/WkmTxBTe52o/hqdefault.jpg" alt="Video thumbnail" loading="lazy"></span>
+          <span class="source-info">
+            <strong>"How To Hide Your Phone's Location"</strong><br>
+            <span class="source-channel">The Hated One</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=JqdX5YUfD1k" target="_blank" rel="noopener">
+          <span class="source-thumb"><img src="https://i.ytimg.com/vi/JqdX5YUfD1k/hqdefault.jpg" alt="Video thumbnail" loading="lazy"></span>
+          <span class="source-info">
+            <strong>"How To Make Your Phone Unhackable"</strong><br>
+            <span class="source-channel">Proton</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p>Built with 🔒 by <a href="https://cappy-dev.github.io">Cappy 🎩</a></p>
+    <p class="footer-note">Your checklist progress is saved locally in your browser. No data leaves your device.</p>
+  </footer>
+
+  <!-- Toast for copy feedback -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
