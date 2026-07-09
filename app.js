@@ -27,15 +27,15 @@ const checklistData = [
     category: 'everyday',
     id: 'update-os',
     difficulty: 'easy',
-    label: 'Install the latest OS and security updates',
-    hint: 'Most phone hacks exploit known vulnerabilities that already have patches. Check monthly. If your phone stops getting updates, it\'s time for a new one.'
+    label: 'STAY UPDATED: Install the latest OS and security patches',
+    hint: 'Most phone hacks exploit known vulnerabilities that already have patches. Check monthly. If your phone stops getting updates, it\'s time for a new one. This is The Hated One\'s #1 rule.'
   },
   {
     category: 'everyday',
     id: 'auto-lock',
     difficulty: 'easy',
-    label: 'Set auto-lock to 30 seconds or less',
-    hint: 'A short auto-lock means a stolen or unattended phone locks before anyone can snoop. Settings > Display > Auto-lock.'
+    label: 'ENABLE AUTOLOCK: Set auto-lock to 30 seconds or less',
+    hint: 'A short auto-lock means a stolen or unattended phone locks before anyone can snoop. Settings > Display > Auto-lock. The faster it locks, the less window for exploitation.'
   },
   {
     category: 'everyday',
@@ -55,8 +55,8 @@ const checklistData = [
     category: 'everyday',
     id: 'encrypt-backup',
     difficulty: 'easy',
-    label: 'Encrypt your phone backups',
-    hint: 'An unencrypted backup on your computer is a copy of every message, photo, and password on your phone. iTunes/Finder backups: check "Encrypt local backup". Android: backups are encrypted by default on modern versions.'
+    label: 'BACK UP DEVICES: Encrypt your phone backups',
+    hint: 'An unencrypted backup on your computer is a copy of every message, photo, and password on your phone. iTunes/Finder backups: check "Encrypt local backup". Android: backups are encrypted by default on modern versions. Back up regularly so you don\'t lose everything if your phone is seized or lost.'
   },
   {
     category: 'everyday',
@@ -69,72 +69,78 @@ const checklistData = [
     category: 'everyday',
     id: 'strong-password',
     difficulty: 'easy',
-    label: 'Use a strong unique password + password manager',
+    label: 'STRONG PASSWORD: Use a unique password + password manager',
     hint: 'A password manager (Bitwarden, KeePassXC) generates and stores unique 20+ character passwords for every account. Reusing passwords means one breach compromises everything. Protect it with a strong master passphrase.'
   },
   {
     category: 'everyday',
     id: 'voice-assistant-off',
     difficulty: 'easy',
-    label: 'Disable voice assistants (Siri, Google Assistant, Bixby)',
+    label: 'VOICE ASSISTANT: Disable Siri, Google Assistant, Bixby',
     hint: 'Voice assistants constantly listen for trigger words and send audio to the cloud. Turn them off in Settings > Siri & Search (iOS) or Settings > Google > Assistant (Android). This reduces always-on microphone surveillance.'
   },
   {
     category: 'everyday',
     id: 'biometrics-off',
     difficulty: 'medium',
-    label: 'Turn off biometric unlock (fingerprint, Face ID)',
+    label: 'BIOMETRICS OFF: Turn off fingerprint and Face ID unlock',
     hint: 'Biometrics can be compelled by force (pressing your finger, pointing the phone at your face). Use a PIN instead. iOS: Settings > Face ID & Passcode. Android: Settings > Security > Biometrics. Keep a duress option in mind for worst cases.'
   },
   {
     category: 'everyday',
     id: 'black-backgrounds',
     difficulty: 'easy',
-    label: 'Use a black or plain background',
+    label: 'BLACK BACKGROUNDS: Use a plain black wallpaper',
     hint: 'A bright or detailed wallpaper can reflect in your eyes and be read by surveillance cameras. Use a plain black background on your lock screen and home screen. Also prevents shoulder surfers from seeing notifications against busy imagery.'
   },
-  // === OFF-GRID/SURVIVAL ===
   {
-    category: 'off-grid',
-    id: 'burner-phone',
+    category: 'everyday',
+    id: 'turn-off-previews',
+    difficulty: 'easy',
+    label: 'TURN OFF PREVIEWS: Hide notification content on lock screen',
+    hint: 'Notifications on your lock screen can reveal 2FA codes, messages from apps, and email previews. iOS: Settings > Notifications > Show Previews > "When Unlocked". Android: Settings > Lock screen > Notifications > "Hide content".'
+  },
+  {
+    category: 'everyday',
+    id: 'data-broker-optout',
     difficulty: 'medium',
-    label: 'GET A BURNER',
-    hint: 'Use a cheap disposable phone for sensitive situations. Destroy or discard completely when done. This prevents tracking and protects your main device.'
+    label: 'DATA BROKER APPS: Remove your info from data brokers',
+    hint: 'Data brokers like BeenVerified, Spokeo, and Whitepages collect and sell your personal info. Use opt-out services like DeleteMe, Incogni, or manually submit opt-out requests. Also opt out of people-search apps on your phone.'
   },
   {
-    category: 'off-grid',
-    id: 'disable-phone',
+    category: 'everyday',
+    id: 'secure-messaging',
     difficulty: 'easy',
-    label: 'TURN IT OFF',
-    hint: 'Power off your phone completely when not in use. This prevents remote access, tracking, and location leaks. Leave it off for hours or days when in high-risk situations.'
+    label: 'SECURE MESSAGING: Switch to Signal or SimpleX',
+    hint: 'WhatsApp collects metadata, SMS is completely unencrypted, and Telegram leaks metadata. Signal is the gold standard for everyday use. For maximum privacy, try SimpleX or Briar. Check the Messaging Privacy Score below to compare.'
   },
   {
-    category: 'off-grid',
-    id: 'faraday-bag',
-    difficulty: 'hard',
-    label: 'FARADAY BAG',
-    hint: 'Store your phone in a Faraday bag or signal-blocking pouch to completely block all wireless communications. This protects against remote hacking, tracking, and drone surveillance.'
+    category: 'everyday',
+    id: 'cloud-uploads',
+    difficulty: 'medium',
+    label: 'CLOUD UPLOADS: Audit what auto-uploads to the cloud',
+    hint: 'Google Photos and iCloud auto-upload every photo you take, giving the company a copy of your entire visual life. Turn off auto-upload. Use local backups or end-to-end encrypted alternatives like Ente Photos. Check what apps have cloud access in your settings.'
   },
   {
-    category: 'off-grid',
-    id: 'duress-pin',
-    difficulty: 'hard',
-    label: 'SET UP A DURESS PIN',
-    hint: 'Create a secondary PIN/social security number you can forcibly provide under coercion. Keep it separate from your real PIN. This protects your loved ones while sacrificing your own privacy.'
-  },
-  {
-    category: 'off-grid',
-    id: 'carry-on-you',
+    category: 'everyday',
+    id: 'disappearing-messages',
     difficulty: 'easy',
-    label: 'CARRY IT ON YOU',
-    hint: 'Always keep your phone physically close. In a pocket, holster, or deep in a bag. Never leave it unattended in cars, cafes, or public places where it can be accessed by strangers.'
+    label: 'DISAPPEARING MESSAGES: Enable in Signal and other apps',
+    hint: 'Set messages to auto-delete after a set time (1 day, 1 week, etc.) in Signal > conversation settings > Disappearing messages. This limits what can be extracted if your phone is seized or lost. Also available in WhatsApp and Telegram, but Signal does it best.'
   },
   {
-    category: 'off-grid',
-    id: 'reboot-device',
-    difficulty: 'easy',
-    label: 'REBOOT DEVICE',
-    hint: 'Restart your phone regularly (daily/weekly). This kills active exploits, clears volatile memory, and prevents persistent malware or spyware from remaining active.'
+    category: 'everyday',
+    id: 'non-essential-accounts',
+    difficulty: 'medium',
+    label: 'NON-ESSENTIAL ACCOUNTS: Delete accounts you no longer use',
+    hint: 'Every old account is a data breach waiting to happen. Use justdelete.me to find deletion links. At minimum, delete old social media, shopping, and forum accounts. Fewer accounts = smaller attack surface = less tracking.'
+  },
+  {
+    category: 'everyday',
+    id: 'non-essential-accounts-remove',
+    difficulty: 'medium',
+    label: 'Remove non-essential accounts from your phone',
+    hint: 'Don\'t keep accounts logged in on your phone if you don\'t need them. Sign out of old email accounts, social media you rarely use, and shopping apps. Each logged-in account is a tracking vector and a data source if your phone is seized.'
   },
 
   // === LOCATION ===
@@ -177,8 +183,8 @@ const checklistData = [
     category: 'location',
     id: 'offline-maps',
     difficulty: 'medium',
-    label: 'Use offline maps instead of online navigation',
-    hint: 'Apps like Organic Maps and OSMAnd let you download map regions and navigate using GPS only. No data leaves your device. Your travel history stays private. Available on Android and iOS.'
+    label: 'OFFLINE MAPS: Use Organic Maps instead of Google Maps',
+    hint: 'Apps like Organic Maps and OSMAnd let you download map regions and navigate using GPS only. No data leaves your device. Your travel history stays private. Available on Android and iOS via F-Droid or direct download.'
   },
   {
     category: 'location',
@@ -261,10 +267,10 @@ const checklistData = [
   },
   {
     category: 'network',
-    id: 'rmdir',
+    id: 'remove-bloatware',
     difficulty: 'hard',
     label: 'Remove carrier bloatware and carrier tracking apps',
-    hint: 'Carrier apps like "My Verizon" or "AT&T" track your location and usage data. Uninstall them or disable them via APM. On Android: use ADB to debloat. On any phone: check for and remove OEM telemetry apps.'
+    hint: 'Carrier apps like "My Verizon" or "AT&T" track your location and usage data. Uninstall them or disable them via ADB. On Android: use ADB to debloat. On any phone: check for and remove OEM telemetry apps.'
   },
 
   // === APPS & PERMISSIONS ===
@@ -295,13 +301,6 @@ const checklistData = [
     difficulty: 'medium',
     label: 'Replace privacy-hostile apps with open-source alternatives',
     hint: 'Google Maps -> Organic Maps. Chrome -> Firefox/Fennec. WhatsApp -> Signal. Gmail -> Proton Mail. Google Photos -> Ente Photos. YouTube -> NewPipe/Grayjay. Each replacement stops one company from profiling you.'
-  },
-  {
-    category: 'apps',
-    id: 'notifications-hidden',
-    difficulty: 'easy',
-    label: 'Hide notification content on your lock screen',
-    hint: 'Notifications on your lock screen can reveal 2FA codes, messages from apps, and email previews. iOS: Settings > Notifications > Show Previews > "When Unlocked". Android: Settings > Lock screen > Notifications > "Hide content".'
   },
   {
     category: 'apps',
@@ -337,8 +336,8 @@ const checklistData = [
     category: 'advanced',
     id: 'grapheneos',
     difficulty: 'hard',
-    label: 'Consider GrapheneOS or a degoogled Android for maximum privacy',
-    hint: 'GrapheneOS is a hardened, privacy-focused Android fork for Pixel phones. It removes all Google services, blocks background scanning even when WiFi is on, and gives granular permission control. Not for everyone, but it\'s the gold standard for phone privacy.'
+    label: 'ALTERNATIVE OS: Consider GrapheneOS or a degoogled Android',
+    hint: 'GrapheneOS is a hardened, privacy-focused Android fork for Pixel phones. It removes all Google services, blocks background scanning even when WiFi is on, and gives granular permission control. Not for everyone, but it\'s the gold standard for phone privacy. Other options: CalyxOS, DivestOS.'
   },
   {
     category: 'advanced',
@@ -359,7 +358,7 @@ const checklistData = [
     id: 'auto-reboot',
     difficulty: 'medium',
     label: 'Set your phone to restart automatically at night',
-    hint: 'Worst-case, law enforcement can sometimes extract keys from a seized phone if it stays unlocked (Traffic Analysis situation). A reboot puts the phone in BFU (Before First Unlock) mode, requiring your PIN to decrypt data. GrapheneOS supports auto-reboot. iOS does not, but you can make it a habit.'
+    hint: 'Worst-case, law enforcement can sometimes extract keys from a seized phone if it stays unlocked. A reboot puts the phone in BFU (Before First Unlock) mode, requiring your PIN to decrypt data. GrapheneOS supports auto-reboot. iOS does not, but you can make it a habit.'
   },
   {
     category: 'advanced',
@@ -368,9 +367,9 @@ const checklistData = [
     label: 'Know how to quickly disable biometric unlock',
     hint: 'Biometrics can be compelled (pressed against your finger, pointed at your face). On iOS: press power and volume button together for 5 seconds to require PIN. On Android: set "Lockdown" in power menu settings. Practice this before you need it.'
   },
-    {
-      category: 'advanced',
-      id: 'port-mitigation',
+  {
+    category: 'advanced',
+    id: 'port-mitigation',
     difficulty: 'hard',
     label: 'Disable 0-carrier exploit ports (e.g. 27000 on Samsung)',
     hint: 'Samsung phones shipped with a debugging port (27000) open on the cellular baseband. Attackers could exploit it remotely. Check if your OEM has patched known baseband bugs. Apply the latest security patches. For maximum protection, use a phone with strong exploit mitigations like GrapheneOS.'
@@ -382,6 +381,73 @@ const checklistData = [
     label: 'Enable Lockdown Mode if you are a high-profile target (iOS) or use Guest Mode (Android)',
     hint: 'iOS Lockdown Mode restricts most wireless and messaging features to block targeted attacks. For most people, this is overkill and makes the phone less convenient. But if you face targeted threats (journalists, politicians), it\'s a real option. Android: use a separate Guest profile for risky situations.'
   },
+
+  // === OFF-GRID / SURVIVAL ===
+  {
+    category: 'off-grid',
+    id: 'burner-phone',
+    difficulty: 'hard',
+    label: 'GET A BURNER',
+    hint: 'Use a cheap disposable phone for sensitive situations. Buy with cash, no personal accounts, prepaid SIM. Destroy or discard completely when done. This prevents tracking and protects your main device. The Hated One\'s #1 off-grid rule.'
+  },
+  {
+    category: 'off-grid',
+    id: 'disable-phone',
+    difficulty: 'easy',
+    label: 'TURN IT OFF',
+    hint: 'Power off your phone completely when not in use. This prevents remote access, tracking, and location leaks. Leave it off for hours or days when in high-risk situations. An off phone cannot be hacked.'
+  },
+  {
+    category: 'off-grid',
+    id: 'faraday-bag',
+    difficulty: 'hard',
+    label: 'FARADAY BAG',
+    hint: 'Store your phone in a Faraday bag or signal-blocking pouch to completely block all wireless communications. This protects against remote hacking, tracking, and surveillance. Even powered off, some components may still ping towers. A Faraday bag ensures total isolation.'
+  },
+  {
+    category: 'off-grid',
+    id: 'duress-pin',
+    difficulty: 'hard',
+    label: 'SET UP A DURESS PIN',
+    hint: 'Create a secondary PIN you can provide under coercion. On iOS, a different PIN can trigger a wiped profile. On Android, some ROMs support duress modes. This protects your real data while appearing to comply. Keep it separate from your real PIN.'
+  },
+  {
+    category: 'off-grid',
+    id: 'carry-on-you',
+    difficulty: 'easy',
+    label: 'CARRY IT ON YOU',
+    hint: 'Always keep your phone physically close. In a pocket, holster, or deep in a bag. Never leave it unattended in cars, cafes, or public places where it can be accessed, cloned, or tampered with by strangers.'
+  },
+  {
+    category: 'off-grid',
+    id: 'reboot-device',
+    difficulty: 'easy',
+    label: 'REBOOT DEVICE',
+    hint: 'Restart your phone regularly (daily or weekly). This kills active exploits, clears volatile memory, and prevents persistent malware or spyware from remaining active. Rebooting puts the phone back in BFU (Before First Unlock) state where encryption keys are not in memory.'
+  },
+];
+
+// === MESSAGING APP PRIVACY SCORE (The Hated One's matrix) ===
+
+const messagingScores = [
+  { app: 'Briar',     score: 2,  tier: 'best',   icon: 'briar',     notes: 'Peer-to-peer, no central server, Tor-based' },
+  { app: 'Cwtch',    score: 2,  tier: 'best',   icon: 'cwtch',    notes: 'Metadata-resistant, Tor-based, no central server' },
+  { app: 'SimpleX',  score: 1,  tier: 'best',   icon: 'simplex',  notes: 'No user IDs at all, maximum metadata protection' },
+  { app: 'Session',  score: 10, tier: 'good',   icon: 'session',  notes: 'Onion-routed, no phone number required' },
+  { app: 'Threema',  score: 9,  tier: 'good',   icon: 'threema',  notes: 'Paid, no phone number, E2E but central server' },
+  { app: 'Signal',   score: 6,  tier: 'good',   icon: 'signal',   notes: 'Gold standard E2E, but requires phone number' },
+  { app: 'Wire',     score: 8,  tier: 'good',   icon: 'wire',     notes: 'E2E, minimal metadata, can use email signup' },
+  { app: 'Matrix',   score: 5,  tier: 'good',   icon: 'matrix',   notes: 'Federated, E2E optional, depends on server' },
+  { app: 'Telegram', score: -7, tier: 'bad',    icon: 'telegram', notes: 'E2E only in secret chats, collects metadata, phone number required' },
+  { app: 'Viber',    score: -11, tier: 'bad',   icon: 'viber',    notes: 'E2E but collects metadata, phone number required' },
+  { app: 'Discord',  score: -11, tier: 'bad',   icon: 'discord',  notes: 'No E2E, collects everything, ties to real identity' },
+  { app: 'iMessage', score: -13, tier: 'bad',   icon: 'imessage', notes: 'E2E within Apple, but Apple can read metadata, ties to Apple ID' },
+  { app: 'Slack',    score: -13, tier: 'bad',   icon: 'slack',    notes: 'No E2E, employer can read everything, ties to email' },
+  { app: 'WhatsApp', score: -17, tier: 'worst', icon: 'whatsapp', notes: 'E2E but massive metadata collection, owned by Meta, phone number required' },
+  { app: 'Facebook Messenger', score: -17, tier: 'worst', icon: 'facebook',  notes: 'No E2E by default, full surveillance, owned by Meta' },
+  { app: 'RCS',      score: -17, tier: 'worst', icon: 'rcs',      notes: 'Carrier-based, metadata exposed, Google involved on Android' },
+  { app: 'Snapchat', score: -21, tier: 'worst', icon: 'snapchat', notes: 'Location tracking, screenshot detection bypass, massive data collection' },
+  { app: 'SMS',      score: -21, tier: 'worst', icon: 'sms',      notes: 'No encryption at all, carrier can read everything, completely insecure' },
 ];
 
 // === RENDER ===
@@ -394,7 +460,6 @@ function render() {
     apps: { items: [], container: document.getElementById('apps') },
     advanced: { items: [], container: document.getElementById('advanced') },
     'off-grid': { items: [], container: document.getElementById('off-grid') },
-    messaging: { items: [], container: document.getElementById('messaging') },
   };
 
   checklistData.forEach(item => {
@@ -415,7 +480,50 @@ function render() {
     });
   });
 
+  // Render messaging score table
+  renderMessagingScore();
+
   updateProgress();
+}
+
+function renderMessagingScore() {
+  const container = document.getElementById('messagingScore');
+  if (!container) return;
+
+  const tiers = {
+    best: { label: 'Best', color: '#10b981', bg: 'rgba(16, 185, 129, 0.12)' },
+    good: { label: 'Good', color: '#5e6ad2', bg: 'rgba(94, 106, 210, 0.12)' },
+    bad: { label: 'Bad', color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.12)' },
+    worst: { label: 'Worst', color: '#ef4444', bg: 'rgba(239, 68, 68, 0.12)' },
+  };
+
+  const rows = messagingScores.map(m => {
+    const tier = tiers[m.tier] || tiers.worst;
+    const absScore = Math.abs(m.score);
+    const scoreDisplay = m.score > 0 ? '+' + m.score : m.score;
+    return `
+      <div class="msg-row" style="--tier-color: ${tier.color}; --tier-bg: ${tier.bg};">
+        <div class="msg-app">
+          <span class="msg-tier-badge" style="background: ${tier.bg}; color: ${tier.color};">${tier.label}</span>
+          <span class="msg-name">${m.app}</span>
+        </div>
+        <div class="msg-score" style="color: ${tier.color};">${scoreDisplay}</div>
+        <div class="msg-notes">${m.notes}</div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="msg-table">
+      <div class="msg-header">
+        <div class="msg-col-app">App</div>
+        <div class="msg-col-score">Score</div>
+        <div class="msg-col-notes">Why</div>
+      </div>
+      ${rows}
+    </div>
+    <p class="msg-legend"><strong>How scoring works:</strong> Each app starts at 0. Points added for good encryption, no metadata collection, no phone number requirement, and decentralized architecture. Points subtracted for metadata leaks, phone number requirements, central servers, and lack of E2E. Higher positive = better. More negative = worse. Source: The Hated One's Privacy Score matrix.</p>
+  `;
 }
 
 function createItem(item, isDone) {
