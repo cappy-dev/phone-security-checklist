@@ -65,6 +65,77 @@ const checklistData = [
     label: 'Clean your screen to remove unlock pattern traces',
     hint: 'If you use a pattern unlock, the oil from your finger leaves a visible trail on the screen. Wipe your screen regularly, or better yet, switch to a PIN.'
   },
+  {
+    category: 'everyday',
+    id: 'strong-password',
+    difficulty: 'easy',
+    label: 'Use a strong unique password + password manager',
+    hint: 'A password manager (Bitwarden, KeePassXC) generates and stores unique 20+ character passwords for every account. Reusing passwords means one breach compromises everything. Protect it with a strong master passphrase.'
+  },
+  {
+    category: 'everyday',
+    id: 'voice-assistant-off',
+    difficulty: 'easy',
+    label: 'Disable voice assistants (Siri, Google Assistant, Bixby)',
+    hint: 'Voice assistants constantly listen for trigger words and send audio to the cloud. Turn them off in Settings > Siri & Search (iOS) or Settings > Google > Assistant (Android). This reduces always-on microphone surveillance.'
+  },
+  {
+    category: 'everyday',
+    id: 'biometrics-off',
+    difficulty: 'medium',
+    label: 'Turn off biometric unlock (fingerprint, Face ID)',
+    hint: 'Biometrics can be compelled by force (pressing your finger, pointing the phone at your face). Use a PIN instead. iOS: Settings > Face ID & Passcode. Android: Settings > Security > Biometrics. Keep a duress option in mind for worst cases.'
+  },
+  {
+    category: 'everyday',
+    id: 'black-backgrounds',
+    difficulty: 'easy',
+    label: 'Use a black or plain background',
+    hint: 'A bright or detailed wallpaper can reflect in your eyes and be read by surveillance cameras. Use a plain black background on your lock screen and home screen. Also prevents shoulder surfers from seeing notifications against busy imagery.'
+  },
+  // === OFF-GRID/SURVIVAL ===
+  {
+    category: 'off-grid',
+    id: 'burner-phone',
+    difficulty: 'medium',
+    label: 'GET A BURNER',
+    hint: 'Use a cheap disposable phone for sensitive situations. Destroy or discard completely when done. This prevents tracking and protects your main device.'
+  },
+  {
+    category: 'off-grid',
+    id: 'disable-phone',
+    difficulty: 'easy',
+    label: 'TURN IT OFF',
+    hint: 'Power off your phone completely when not in use. This prevents remote access, tracking, and location leaks. Leave it off for hours or days when in high-risk situations.'
+  },
+  {
+    category: 'off-grid',
+    id: 'faraday-bag',
+    difficulty: 'hard',
+    label: 'FARADAY BAG',
+    hint: 'Store your phone in a Faraday bag or signal-blocking pouch to completely block all wireless communications. This protects against remote hacking, tracking, and drone surveillance.'
+  },
+  {
+    category: 'off-grid',
+    id: 'duress-pin',
+    difficulty: 'hard',
+    label: 'SET UP A DURESS PIN',
+    hint: 'Create a secondary PIN/social security number you can forcibly provide under coercion. Keep it separate from your real PIN. This protects your loved ones while sacrificing your own privacy.'
+  },
+  {
+    category: 'off-grid',
+    id: 'carry-on-you',
+    difficulty: 'easy',
+    label: 'CARRY IT ON YOU',
+    hint: 'Always keep your phone physically close. In a pocket, holster, or deep in a bag. Never leave it unattended in cars, cafes, or public places where it can be accessed by strangers.'
+  },
+  {
+    category: 'off-grid',
+    id: 'reboot-device',
+    difficulty: 'easy',
+    label: 'REBOOT DEVICE',
+    hint: 'Restart your phone regularly (daily/weekly). This kills active exploits, clears volatile memory, and prevents persistent malware or spyware from remaining active.'
+  },
 
   // === LOCATION ===
   {
@@ -297,16 +368,9 @@ const checklistData = [
     label: 'Know how to quickly disable biometric unlock',
     hint: 'Biometrics can be compelled (pressed against your finger, pointed at your face). On iOS: press power and volume button together for 5 seconds to require PIN. On Android: set "Lockdown" in power menu settings. Practice this before you need it.'
   },
-  {
-    category: 'advanced',
-    id: 'burner-phone',
-    difficulty: 'hard',
-    label: 'Consider a burner phone for high-risk situations',
-    hint: 'For protests, border crossings, or meeting sensitive sources: a cheap phone with no personal accounts, paid in cash, with a prepaid SIM, discarded afterward. Proton\'s experts recommend having multiple tiers of phone security depending on your threat model.'
-  },
-  {
-    category: 'advanced',
-    id: 'port-mitigation',
+    {
+      category: 'advanced',
+      id: 'port-mitigation',
     difficulty: 'hard',
     label: 'Disable 0-carrier exploit ports (e.g. 27000 on Samsung)',
     hint: 'Samsung phones shipped with a debugging port (27000) open on the cellular baseband. Attackers could exploit it remotely. Check if your OEM has patched known baseband bugs. Apply the latest security patches. For maximum protection, use a phone with strong exploit mitigations like GrapheneOS.'
@@ -329,6 +393,8 @@ function render() {
     network: { items: [], container: document.getElementById('network') },
     apps: { items: [], container: document.getElementById('apps') },
     advanced: { items: [], container: document.getElementById('advanced') },
+    'off-grid': { items: [], container: document.getElementById('off-grid') },
+    messaging: { items: [], container: document.getElementById('messaging') },
   };
 
   checklistData.forEach(item => {
